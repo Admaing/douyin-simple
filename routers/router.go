@@ -9,6 +9,6 @@ func InitRouter() *gin.Engine {
 	r := gin.Default()
 	apiV1 := r.Group("douyin")
 	apiV1.GET("/", controller.Hello)
-	apuV1.GET("/feed/", cont)
+	apiV1.GET("/feed/", controller.Feed)
 	return r
 }
