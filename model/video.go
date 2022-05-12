@@ -2,13 +2,14 @@ package model
 
 type Video struct {
 	//gorm.Model
-	Id            int64  `gorm:"primary_key" json:"id,omitempty"`
+	Id            int64  `gorm:"type:int;primary_key" json:"id,omitempty"`
 	Author        User   `gorm:"embedded" json:"author"`
 	PlayUrl       string `gorm:"type:varchar(200)" json:"play_url" json:"play_url,omitempty"`
 	CoverUrl      string `gorm:"type:varchar(200)" json:"cover_url,omitempty"`
-	FavoriteCount int64  `gorm:"type:varchar(200)" json:"favorite_count,omitempty"`
-	CommentCount  int64  `gorm:"type:varchar(200)" json:"comment_count,omitempty"`
-	IsFavorite    bool   `gorm:"type:varchar(200)" json:"is_favorite,omitempty"`
+	FavoriteCount int64  `gorm:"type:int" json:"favorite_count,omitempty"`
+	CommentCount  int64  `gorm:"type:int" json:"comment_count,omitempty"`
+	IsFavorite    bool   `gorm:"bool" json:"is_favorite,omitempty"`
+	UserID        int64  `gorm:"type:int;not null" json:"user_id,omitempty"`
 }
 
 //type VideoList string{
